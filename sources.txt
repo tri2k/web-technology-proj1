@@ -9,5 +9,8 @@ https://akm-img-a-in.tosshub.com/businesstoday/images/story/202211/avatar-_the_w
 https://static01.nyt.com/images/2022/12/13/multimedia/13avatar-fx-1-3a70/13avatar-fx-1-3a70-videoSixteenByNine3000.jpg
 https://static01.nyt.com/images/2022/12/14/multimedia/14avatar1-1-6cf3/14avatar1-1-6cf3-videoSixteenByNine3000-v3.jpg
 
+gif:
+https://www.filmmakersacademy.com/wp-content/uploads/2023/01/avatar-2_1.giphy_.gif
+
 filler text generation:
 chat.openai.com
