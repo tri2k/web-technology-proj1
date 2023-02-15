@@ -4,5 +4,7 @@ https://img1.pnghut.com/5/14/10/PNX4gqHwAb/james-cameron-head-small-to-medium-si
 fonts:
 google fonts
 
-image:
+images:
 https://akm-img-a-in.tosshub.com/businesstoday/images/story/202211/avatar-_the_way_of_water-sixteen_nine.jpeg?size=1200:675
+https://static01.nyt.com/images/2022/12/13/multimedia/13avatar-fx-1-3a70/13avatar-fx-1-3a70-videoSixteenByNine3000.jpg
+https://static01.nyt.com/images/2022/12/14/multimedia/14avatar1-1-6cf3/14avatar1-1-6cf3-videoSixteenByNine3000-v3.jpg
