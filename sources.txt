@@ -14,3 +14,6 @@ https://www.filmmakersacademy.com/wp-content/uploads/2023/01/avatar-2_1.giphy_.g
 
 filler text generation:
 chat.openai.com
+
+content for cast page:
+https://www.thewrap.com/avatar-the-way-of-water-cast-characters/
