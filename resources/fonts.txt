@@ -1,0 +1,12 @@
+FONTS
+place in head of html:
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Varela+Round&display=swap" rel="stylesheet">
+
+place in css where needed:
+font-family: 'Montserrat', sans-serif;     			(Main font)
+font-family: 'Varela Round', sans-serif;				(title font)
+
+

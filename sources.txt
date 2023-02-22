@@ -14,3 +14,11 @@ https://www.filmmakersacademy.com/wp-content/uploads/2023/01/avatar-2_1.giphy_.g
 
 filler text generation:
 chat.openai.com
+
+first review:
+https://www.imdb.com/review/rw8748012/?ref_=tt_urv
+
+video review:
+https://www.youtube.com/watch?v=gelmi4hvJes
+
+
