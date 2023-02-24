@@ -1,0 +1,11 @@
+favicon:
+https://img1.pnghut.com/5/14/10/PNX4gqHwAb/james-cameron-head-small-to-medium-sized-cats-mammal-snout.jpg
+
+fonts:
+google fonts
+
+image:
+https://akm-img-a-in.tosshub.com/businesstoday/images/story/202211/avatar-_the_way_of_water-sixteen_nine.jpeg?size=1200:675
+
+logo:
+https://lumiere-a.akamaihd.net/v1/images/pp_avatar_thewayofwater_logo_97_b382cbde.png
