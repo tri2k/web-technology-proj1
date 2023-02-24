@@ -1,62 +1,91 @@
-html {
-   /* background-color: #037971; */
+body, html {
     background: linear-gradient(#000080,#00FFC5); 
-    height: auto;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    height: auto; 
     margin: 0;
-    min-height: 100vh;
 }
 
-
-@media only screen and (min-width: 600px) {
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        padding: 10px 90px;
-        box-sizing: border-box;
-        background: rgba(0, 0, 0, 0.6);
-        border-bottom: 2px solid #000080;
-        z-index: 10;
-    }
-
-    nav .logo{
-        padding: 20px;
-        height: 80px;
-        float: left;
-        margin-top: -20px;
-    }
-    
-    nav ul {
-        list-style: none;
-        float: right;
-        margin: 0;
-        padding: 0;
-        display: flex;
-    }
-    
-    nav ul li a{
-        line-height: 80px;
-        color: #5BC0EB;
-        margin: 10px 30px;
-        text-decoration: none;
-        font-family: 'Montserrat', sans-serif; 
-        font-weight: bold;
-        text-transform: uppercase; 
-    }
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-nav .logo{
+nav {
+    height: 80px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    position: fixed;
+
+    background: rgba(0, 0, 0, 0.7); 
+    box-sizing: border-box;
+    border-bottom: 2px solid #000080;
+}
+
+nav .logo {
     padding: 20px;
     height: 80px;
     float: left;
     margin-top: -20px;
 }
 
+nav ul { 
+    float: right; 
+    margin-right: 25px; 
+}
+
+nav ul li { 
+    display: inline-block; 
+    line-height: 80px; 
+    margin: 0 15px; }
+
+nav ul li a {
+    position: relative;
+    color: #5BC0EB;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: bold;
+    text-transform: uppercase; 
+    padding: 5px 0;
+}
+
 nav ul li a:hover {
     color: #00FFC5;
 }
+
+nav ul li a:before {
+    position: absolute;
+    content: ''; 
+    left: 0;
+    bottom: 0; 
+    height: 3px;
+    width: 100%;
+    background: #00FFC5;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .4s linear; 
+}
+
+nav ul li a:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+} 
+
+label #nav__btn, label #nav__btn--cancel {
+    color: #5BC0EB;
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#nav__check { display: none; }
 
 .title {
     font-family: 'Varela Round', sans-serif;
@@ -152,11 +181,19 @@ nav ul li a:hover {
 
 /* REVIEWS PAGE */
 
+.reviews-title {
+    font-family: 'Montserrat', serif;
+    color: #00FFC5;
+
+
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
 
 .first-reviews {
     height: auto;
     font-family: 'Varela Round', sans-serif;
-    margin-top: 100px;
     color: #00FFC5;
     width: 100%;
 }
@@ -181,10 +218,13 @@ nav ul li a:hover {
 
 @media only screen and (min-width: 992px)
 {
+    .reviews-title {
+        margin-top: 130px;
+    }
+
     .first-reviews {
         overflow:auto;
-        display:flex;
-        margin-top: 130px;
+        display:flex
     }
     
     .first-reviews__text {
@@ -209,7 +249,12 @@ nav ul li a:hover {
 
 .short-reviews{
     padding-top: 15px;
-
+    width: 90%;
+    margin: 0 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .short-reviews___row{
@@ -218,24 +263,32 @@ nav ul li a:hover {
 
 .short-reviews__review{
     color:#000080;
-    padding: 5px;
-    margin: 5px;
-    padding-top: 0;
+    text-align: center;
     border: 1px solid #000080;
+
+    padding: 0 5px 5px 5px;
+    margin: 5px auto;
+    width: 100%;
+
+
 }
 
 .short-reviews__stars{
-    text-align: center;
-    margin:0;
+    margin: 0;
 }
 
 .short-reviews__text{
-    text-align: left;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
+.short-reviews__first_column{
+    float:left;
+}
 
+.short-reviews__second_column{
+    float:left;
+}
 
 
 
@@ -244,36 +297,138 @@ nav ul li a:hover {
 {
     .short-reviews{
         padding-top: 15px;
-        margin: 20px 20px;
-        overflow: auto;
     
     }
     
     .short-reviews__review{
-        color:#000080;
-        padding: 5px;
-        margin: 5px;
-        padding-top: 0;
-        border: 1px solid #000080;
+        padding: 0 8px 8px 8px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     
     .short-reviews__stars{
-        margin:0;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: auto
+
     }
     
     .short-reviews__text{
-        margin:0;
+        margin:1em 0 0 0;
         padding-top: 5px;
     }
     .short-reviews__first_column{
+        width: 48%;
         float: left;
-        width: 45%;
 
     }
     
     .short-reviews__second_column{
+        width: 48%;
         float: right;
-        width: 45%;
     }
     
+}
+/*////////////////////////               Media queries for mobile optimisation               //////////////////////////////////////////*/
+
+
+@media screen and (max-width: 768px) {
+
+    /* ////////////////////                       Mobile Header                          ///////////////////////////////////////////// */
+
+    nav .logo {
+        left: 6%;
+        top: 20px;
+        margin-top: -10px;
+        height: 60px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    label #nav__btn {
+        display: block;
+    }
+
+    #nav__check:checked ~ ul {
+        left: 0;
+    }
+
+    #nav__check:checked ~ label #nav__btn {
+        display: none;
+    }
+
+    #nav__check:checked ~ label #nav__btn--cancel {
+        display: block;
+    }
+
+    /* ////////////////////                       Mobile Header                          ///////////////////////////////////////////// */
+
+    .homepage-hero {
+        display: flex;
+    }
+
+    .homepage-hero__text {
+        font-size: 12px;
+    }
+
+    .homepage-hero__text--subtext {
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+
+    body, html{
+        background: linear-gradient(#000080,#00FFC5) ;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .content-area__img, .content-area__img--2 {
+        width: 80vw;
+    }
+
+    .content-area__img--2 {
+        float: top;
+        margin-top: -850px;
+    }
+
+    .content-area__intro, .content-area__intro--2 {
+        width: 80vw;
+        margin-top: -80px;
+        color: white;
+
+        overflow: hidden;
+        float: none;
+        padding: 20px;
+        text-align: center;
+    }
+
+   .content-area__intro--2 {
+    margin-top: 300px;
+    margin-left: 0;
+    padding-bottom: 40px;
+   }
 }
