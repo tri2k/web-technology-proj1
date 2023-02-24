@@ -3,12 +3,11 @@ body, html {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    /* height: 165%; */ 
-    height: 165%;
+    height: 165%; 
     margin: 0;
 }
 
-/* //////////////////                        Header START                    /////////////////////////////////////////*/
+/* //////////////////                        Header                     /////////////////////////////////////////*/
 
 * {
     margin: 0;
@@ -90,10 +89,10 @@ label #nav__btn, label #nav__btn--cancel {
 
 #nav__check { display: none; }
 
-/* //////////////////                        Header END                    /////////////////////////////////////////*/
+/* //////////////////                        Header                     /////////////////////////////////////////*/
 
 .homepage-hero {
-    background-image: url(media/avatar.gif); 
+    background-image: url(https://www.filmmakersacademy.com/wp-content/uploads/2023/01/avatar-2_1.giphy_.gif); 
     background-position: center ;
     background-size: cover;
     background-repeat: no-repeat;
@@ -187,7 +186,7 @@ label #nav__btn, label #nav__btn--cancel {
 }
 
 .cast-hero {
-    background-image: url("media/hero.png");
+    background-image: url("hero.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -241,158 +240,13 @@ label #nav__btn, label #nav__btn--cancel {
     margin-top: 80px;
 }
 
-/*/////////////////////////                      Wiki Page Attributes                       //////////////////////////////////////////*/
-
-.wiki {
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-}
-
-::-webkit-scrollbar {
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 25px;
-}
-
-::-webkit-scrollbar-thumb {
-    background:  #6e93f7;
-    border-radius: 25pz;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #4070f4;
-}
-
-.container {
-    display: flex;
-    gap: 20px;
-    max-width: 400px;
-    width: 100%;
-    background: #00008051 ; /* Styling ova here */
-    border-radius: 12px;
-    padding: 30px;
-    scroll-snap-type: x mandatory;
-    overflow-x: scroll;
-    scroll-padding: 30px;
-    box-shadow: 0 15px 25px  rgba(0,0,0,0.1);
-
-    margin-top: 100px;
-
-}
-
-.container .card, .card2, .card3,
-.card4, .card5, .card6 {
-    display: flex;
-    flex: 0 0 100%;
-    flex-direction: column;
-    align-items: center;
-    background-image: url(media/slider1.png);
-    background-position: top  ;
-
-
-
-    border-radius: 50px;
-    padding: 30px;
-    scroll-snap-align: start;
-    box-shadow: 0 15px 25px  rgba(0,0,0,0.1);
-
-    background-size: cover;
-
-}
-
-.card, .card2, .card3,
-.card4, .card5, .card6 {
-    height: 400px;
-    width: 200px;
-
-    margin-top: 4px;
-
-    /* Maybe gunna need to add some funky 
-    font shiznit here */
-    font-size: 16px;
-    text-align: center;
-
-    color: white;
-    text-shadow:
-    0.07em 0 black,
-    0 0.07em black,
-    -0.07em 0 black,
-    0 -0.07em black;
-
-
-    
-
-}
-
-.card2 {
-    background-image: url(media/slider2.png);
-}
-
-.card3 {
-    background-image: url(media/slider3.png);
-}
-
-.card4 {
-    background-image: url(media/slider4.png);
-}
-
-.card5 {
-    background-image: url(media/slider1.png);
-}
-
-.card6 {
-    background-image: url(media/slider2.png);
-}
-
-.card h2, .card2 h2, .card3 h2,
-.card4 h2, .card5 h2, .card6 h2 {
-    margin-bottom: 15px;
-    color: #00FFC5;
-    /* font-family: ; */
-    font-size: 24px;
-    font-weight: 600 ;
-
-
-}
-
-.card a, .card2 a, .card3 a,
-.card4 a, .card5 a, .card6 a  {
-    color: #6e93f7;
-}
-
-.card a:hover, .card2 a:hover, .card3 a:hover,
-.card4 a:hover, .card5 a:hover, .card6 a:hover  {
-    color: #00FFC5;
-}
-
-.card a:visited, .card2 a:visited, .card3 a:visited,
-.card4 a:visited, .card5 a:visited, .card6 a:visited {
-    color: rgb(255, 68, 255);
-}
-
-.container__title {
-    font-family: 'Montserrat', serif;
-    font-size: 36px;
-    -webkit-text-stroke: 0.5px white;
-    font-weight: 600;
-    position: absolute;
-    margin-top: -500px;
-    color: #5BC0EB;
-}
-
 
 /*////////////////////////               Media queries for mobile optimisation               //////////////////////////////////////////*/
 
 
 @media screen and (max-width: 768px) {
 
-    /* ////////////////////                       Mobile Header START                       ///////////////////////////////////////////// */
+    /* ////////////////////                       Mobile Header                          ///////////////////////////////////////////// */
 
     nav .logo {
         left: 6%;
@@ -438,7 +292,7 @@ label #nav__btn, label #nav__btn--cancel {
         display: block;
     }
 
-    /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
+    /* ////////////////////                       Mobile Header                          ///////////////////////////////////////////// */
 
     .homepage-hero {
         display: flex;
@@ -498,10 +352,7 @@ label #nav__btn, label #nav__btn--cancel {
     .content-area__intro--tuk, .content-area__intro--spider, .content-area__intro--tsireya {
         width: 80vw;
         text-align: center;
-
-        /*margin-right: 0; */
-        margin-left: auto;
-        margin-right: auto;
+        margin-right: 0;
     }
  
     .content-area__img--jake, .content-area__img--2--neytiri, .content-area__img--kiri, 
@@ -509,27 +360,18 @@ label #nav__btn, label #nav__btn--cancel {
     .content-area__img--neteyan, .content-area__img--2--loak, .content-area__img--tuk,
     .content-area__img--2--spider, .content-area__img--tsireya {
         width: 80vw;
-        
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
     }
 
 
     .content-area__intro--neytiri, .content-area__intro--quarritch, .content-area__intro--tonowari,
     .content-area__intro--loak, .content-area__intro--spider {
         margin-top: 0px;
-
-        margin-bottom: 20px;
     }
 
     .content-area__intro--kiri, .content-area__intro--neteyan,
     .content-area__intro--tuk, .content-area__intro--tsireya,
     .content-area__intro--ronal, .content-area__intro--jake {
         margin-top: -80px;
-
-        margin-bottom: 60px;
     }
 
     .cast-hero__text {
@@ -537,187 +379,4 @@ label #nav__btn, label #nav__btn--cancel {
         line-height: 1000px;
     }
 
-}
-
-/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- ///////////////////               Review Page CSS                       ///////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
-
-/* REVIEWS PAGE */
-
-.reviews-title {
-    font-family: 'Montserrat', serif;
-    color: #00FFC5;
-
-
-    margin-top: 100px;
-    width: 100%;
-    text-align: center;
-}
-
-.first-reviews {
-    height: auto;
-    font-family: 'Varela Round', sans-serif;
-    color: #00FFC5;
-    width: 100%;
-}
-
-.first-reviews__text {
-    padding: 20px;
-    font-size: 16px;
-    line-height: 30px;
-}
-
-.first-reviews__video {
-    display : block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
-    border-width: 0px;
-    aspect-ratio: 16 / 9;
-    
-}
-
-/* random typical min-width I found for desktops and laptops */
-
-@media only screen and (min-width: 992px)
-{
-    .reviews-title {
-        margin-top: 130px;
-    }
-
-    .first-reviews {
-        overflow:auto;
-        display:flex
-    }
-    
-    .first-reviews__text {
-        float:left;
-        width: 50%;
-        line-height: 30px;
-        margin: auto;
-    }
-    
-    .first-reviews__video {
-        float: right;
-        width: 40%;
-        margin-right: 20px;
-        margin-top: 20px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: #000080;
-        border-radius: 20px;
-        margin:auto;
-    }
-}
-
-.short-reviews{
-    padding-top: 15px;
-    width: 90%;
-    margin: 0 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.short-reviews___row{
-
-}
-
-.short-reviews__review{
-    color:#000080;
-    text-align: center;
-    border: 1px solid #000080;
-
-    padding: 0 5px 5px 5px;
-    margin: 5px auto;
-    width: 100%;
-
-
-}
-
-.short-reviews__stars{
-    margin: 0;
-}
-
-.short-reviews__text{
-    margin: 0;
-    padding: 0;
-}
-
-.short-reviews__first_column{
-    float:left;
-}
-
-.short-reviews__second_column{
-    float:left;
-}
-
-
-
-
-@media only screen and (min-width: 992px)
-{
-    .short-reviews{
-        padding-top: 15px;
-    
-    }
-    
-    .short-reviews__review{
-        padding: 0 8px 8px 8px;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-    
-    .short-reviews__stars{
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        margin: auto
-
-    }
-    
-    .short-reviews__text{
-        margin:1em 0 0 0;
-        padding-top: 5px;
-    }
-    .short-reviews__first_column{
-        width: 48%;
-        float: left;
-
-    }
-    
-    .short-reviews__second_column{
-        width: 48%;
-        float: right;
-    }
-
-    /* ///////// TRYING TO FIX THE WIKI PAGE FOR DESKTOP /////////////// */
-    .container {
-        max-width: 1000px;
-    }
-
-    .card, .card2, .card3, 
-    .card4, .card5, .card6 {
-        font-size: 26px;
-        padding-left: 40px;
-        padding-right: 40px;
-
-        text-shadow: none;
-        -webkit-text-stroke: 0.3px black;
-    }
-
-    .card h2, .card2 h2, .card3 h2 {
-     
-     
-        text-shadow: none;
-   
-       
-    } 
-    
 }
