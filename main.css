@@ -30,7 +30,7 @@ body, html {
     border-bottom: 2px solid #000080;
 }
 
-.navigation-bar__logo {
+.navigation-bar__logo-img {
     padding: 20px;
     height: 80px;
     float: left;
@@ -78,66 +78,51 @@ body, html {
     transform-origin: left;
 } 
 
-label #navigation-bar__btn, label #navigation-bar__btn--cancel {
-    color: #5BC0EB;
-    font-size: 30px;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-#navigation-bar__check { display: none; }
-
 /* //////////////////                        Header END                    /////////////////////////////////////////*/
 
 @media screen and (max-width: 850px) {
 
     /* ////////////////////                       Mobile Header START                       ///////////////////////////////////////////// */
 
-    .navigation-bar__logo {
-        left: 6%;
+
+    .navigation-bar{
+        height: auto;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation-bar__logo-link {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navigation-bar__logo-img {
+        float: none;
+        margin: 0 auto;
         top: 20px;
         margin-top: -10px;
-        height: 60px;
+        padding: 15px 0 5px 0;
+        height: 40px;
     }
 
-    .links-list {
-        position: fixed;
+    .links-list{
+        margin: 0 auto;;
+    }
+
+    .links-list__element{
         width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
+        height: 15px;
+        text-align:center;
+        line-height: 15px;
+        margin: 5px 0;
+        font-size: 12px;
     }
-
-    .links-list__element {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-
     .links-list__link {
-        font-size: 20px;
-    }
 
-    label #navigation-bar__btn {
-        display: block;
-    }
-
-    #navigation-bar__check:checked ~ ul {
-        left: 0;
-    }
-
-    #navigation-bar__check:checked ~ label #navigation-bar__btn {
-        display: none;
-    }
-
-    #navigation-bar__check:checked ~ label #navigation-bar__btn--cancel {
-        display: block;
     }
 }
     /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
@@ -206,6 +191,29 @@ label #navigation-bar__btn, label #navigation-bar__btn--cancel {
 .content-area--first{
     margin-top: 80px;
 }
+
+@media screen and (max-width: 850px) {
+
+    .content-area{
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .content-area__text {
+        width: 90%;
+    }
+
+    .content-area__img {
+        width: 70%;
+        margin: 15px auto;
+    }
+
+    .content-area--first{
+        margin-top: 170px;
+    }
+
+
+}
 /* //////////////////                        HOMEPAGE END                                   /////////////////////////////////////////*/
 
 /*////////////////////////               Cast Page Attributes                               ///////////////////////////////////////////*/
@@ -242,7 +250,7 @@ label #navigation-bar__btn, label #navigation-bar__btn--cancel {
 .container {
     display: flex;
     gap: 20px;
-    width: 90%;
+    width: 80%;
     margin: 20px auto;
     background: #00008051 ; /* Styling ova here */
     border-radius: 12px;
