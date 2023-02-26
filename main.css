@@ -17,7 +17,7 @@ body, html {
     text-decoration: none;
 }
 
-nav {
+.navigation-bar {
     height: 80px;
     width: 100%;
     top: 0;
@@ -30,24 +30,24 @@ nav {
     border-bottom: 2px solid #000080;
 }
 
-nav .logo {
+.navigation-bar__logo {
     padding: 20px;
     height: 80px;
     float: left;
     margin-top: -20px;
 }
 
-nav ul { 
+.links-list { 
     float: right; 
     margin-right: 25px; 
 }
 
-nav ul li { 
+.links-list__element { 
     display: inline-block; 
     line-height: 80px; 
     margin: 0 15px; }
 
-nav ul li a {
+.links-list__link {
     position: relative;
     color: #5BC0EB;
     font-family: 'Montserrat', sans-serif; 
@@ -56,11 +56,11 @@ nav ul li a {
     padding: 5px 0;
 }
 
-nav ul li a:hover {
+.links-list__link:hover {
     color: #00FFC5;
 }
 
-nav ul li a:before {
+.links-list__link:before {
     position: absolute;
     content: ''; 
     left: 0;
@@ -73,12 +73,12 @@ nav ul li a:before {
     transition: transform .4s linear; 
 }
 
-nav ul li a:hover:before {
+.links-list__link:hover:before {
     transform: scaleX(1);
     transform-origin: left;
 } 
 
-label #nav__btn, label #nav__btn--cancel {
+label #navigation-bar__btn, label #navigation-bar__btn--cancel {
     color: #5BC0EB;
     font-size: 30px;
     float: right;
@@ -88,11 +88,77 @@ label #nav__btn, label #nav__btn--cancel {
     display: none;
 }
 
-#nav__check { display: none; }
+#navigation-bar__check { display: none; }
 
 /* //////////////////                        Header END                    /////////////////////////////////////////*/
 
+@media screen and (max-width: 850px) {
 
+    /* ////////////////////                       Mobile Header START                       ///////////////////////////////////////////// */
+
+    .navigation-bar__logo {
+        left: 6%;
+        top: 20px;
+        margin-top: -10px;
+        height: 60px;
+    }
+
+    .links-list {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    .links-list__element {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    .links-list__link {
+        font-size: 20px;
+    }
+
+    label #navigation-bar__btn {
+        display: block;
+    }
+
+    #navigation-bar__check:checked ~ ul {
+        left: 0;
+    }
+
+    #navigation-bar__check:checked ~ label #navigation-bar__btn {
+        display: none;
+    }
+
+    #navigation-bar__check:checked ~ label #navigation-bar__btn--cancel {
+        display: block;
+    }
+}
+    /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
+
+::-webkit-scrollbar {
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:  #6e93f7;
+    border-radius: 25pz;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4070f4;
+}
 
 
 
@@ -172,28 +238,11 @@ label #nav__btn, label #nav__btn--cancel {
     width: 50%;
 }
 
-::-webkit-scrollbar {
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 25px;
-}
-
-::-webkit-scrollbar-thumb {
-    background:  #6e93f7;
-    border-radius: 25pz;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #4070f4;
-}
 
 .container {
     display: flex;
     gap: 20px;
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     background: #00008051 ; /* Styling ova here */
     border-radius: 12px;
@@ -201,17 +250,20 @@ label #nav__btn, label #nav__btn--cancel {
     box-shadow: 0 15px 25px  rgba(0,0,0,0.1);
 
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
 }
 
 .container__card {
     height: auto;
-    margin-top: 4px;
+    margin: 20px 0;
     font-size: 16px;
+    width: 70%;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     background-color: #0000b0;
     border-radius: 50px;
@@ -219,7 +271,6 @@ label #nav__btn, label #nav__btn--cancel {
     box-shadow: 0 15px 25px  rgba(0,0,0,0.1);
 
     text-align: center;
-    color: white;
     text-shadow:
     0.07em 0 black,
     0 0.07em black,
@@ -232,7 +283,7 @@ label #nav__btn, label #nav__btn--cancel {
 }
 
 .container__title {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     color: #00FFC5;
     /* font-family: ; */
     font-size: 24px;
@@ -240,14 +291,14 @@ label #nav__btn, label #nav__btn--cancel {
 
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 100%;
 }
 
 .container__text {
     color: aliceblue;
     font-size: 20px;
     font-weight: bold;
-    line-height: 24px;
+    line-height: 32px;
 
 }
 
@@ -262,60 +313,6 @@ label #nav__btn, label #nav__btn--cancel {
 .container__link:visited {
     color: rgb(255, 68, 255);
 }
-
-
-/*////////////////////////               Media queries for mobile optimisation               //////////////////////////////////////////*/
-
-
-@media screen and (max-width: 768px) {
-
-    /* ////////////////////                       Mobile Header START                       ///////////////////////////////////////////// */
-
-    nav .logo {
-        left: 6%;
-        top: 20px;
-        margin-top: -10px;
-        height: 60px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-
-    nav ul li a {
-        font-size: 20px;
-    }
-
-    ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.8);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-
-    label #nav__btn {
-        display: block;
-    }
-
-    #nav__check:checked ~ ul {
-        left: 0;
-    }
-
-    #nav__check:checked ~ label #nav__btn {
-        display: none;
-    }
-
-    #nav__check:checked ~ label #nav__btn--cancel {
-        display: block;
-    }
-}
-    /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
 
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
