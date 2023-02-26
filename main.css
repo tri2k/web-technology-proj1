@@ -112,6 +112,15 @@ label #nav__btn, label #nav__btn--cancel {
     color: aliceblue;
 }
 
+.content-area__title {
+    font-family: 'Montserrat', serif;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 20px auto;
+    color: #00FFC5;
+    text-shadow: rgb(49, 58, 231) 3px 2px;
+}
+
 .content-area__text {
     width: 80%;
     margin: 20px auto;
@@ -140,55 +149,6 @@ label #nav__btn, label #nav__btn--cancel {
     height: auto;
 }
 
-.content-area__intro--jake, .content-area__intro--neytiri, 
-.content-area__intro--kiri, .content-area__intro--quarritch, .content-area__intro--ronal,
-.content-area__intro--tonowari, .content-area__intro--neteyan, .content-area__intro--loak,
-.content-area__intro--tuk, .content-area__intro--spider, .content-area__intro--tsireya {
-    width: 80%;
-}
-
-.content-area__img--jake, .content-area__img--kiri,
-.content-area__img--ronal, .content-area__img--neteyan, .content-area__img--tuk, .content-area__img--tsireya {
-    width: 50%;
-    margin: 100px auto;
-
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000080;
-    border-radius: 20px;
-}
-
-.content-area__img--2--neytiri, .content-area__img--2--quarritch,
-.content-area__img--2--tonowari, .content-area__img--2--loak, .content-area__img--2--spider {
-    width: 50%;
-    margin: 100px auto;
-
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000080;
-    border-radius: 20px; 
-}
-
-.cast-hero {
-    background-image: url("media/hero.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 40%;
-    margin-top: -20px;
-
-}
-
-.cast-hero__text {
-    font-family: 'Montserrat', serif;
-    font-size: 40px;
-    line-height: 700px;
-    position: absolute;
-    left: 10%;
-    color: #00FFC5;
-    text-shadow: rgb(49, 58, 231) 3px 2px;
-}
 
 /*/////////////////////////                      Wiki Page Attributes                       //////////////////////////////////////////*/
 
