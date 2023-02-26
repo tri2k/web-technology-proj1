@@ -8,6 +8,10 @@ body, html {
     margin: 0;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 /* //////////////////                        Header START                    /////////////////////////////////////////*/
 
 * {
@@ -124,25 +128,6 @@ body, html {
 }
     /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
 
-::-webkit-scrollbar {
-    height: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 25px;
-}
-
-::-webkit-scrollbar-thumb {
-    background:  #6e93f7;
-    border-radius: 25pz;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #4070f4;
-}
-
-
 
 /* //////////////////                        HOMEPAGE // MIXES START       /////////////////////////////////////////*/
 
@@ -173,6 +158,11 @@ body, html {
     width: 80%;
     margin: 20px auto;
     text-align: center;
+}
+
+.content-area__text--plot-version {
+    font-size: 18px;
+    line-height: 35px;
 }
 
 .content-area__img{
@@ -229,20 +219,6 @@ body, html {
     flex-direction: column;
 }
 
-.wiki__title {
-    font-family: 'Montserrat', serif;
-    font-size: 36px;
-    -webkit-text-stroke: 0.5px white;
-    font-weight: 100;
-    color: #5BC0EB;
-    text-align: center;
-
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
-
 
 .container {
     display: flex;
@@ -260,11 +236,26 @@ body, html {
 
 }
 
+.container__title {
+    font-family: 'Montserrat', serif;
+    font-size: 36px;
+    -webkit-text-stroke: 0.5px white;
+    font-weight: 100;
+    color: #5BC0EB;
+    text-align: center;
+
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .container__card {
     height: auto;
     margin: 20px 0;
     font-size: 16px;
     width: 70%;
+    font-family: 'Varela Round', sans-serif;
 
     display: flex;
     align-items: center;
@@ -287,7 +278,7 @@ body, html {
 
 }
 
-.container__title {
+.container__card-title {
     margin-bottom: 30px;
     color: #00FFC5;
     /* font-family: ; */
@@ -320,7 +311,7 @@ body, html {
 }
 
 @media screen and (max-width: 850px) {
-    .wiki__title {
+    .container__title {
         margin-top: 190px;
     }
 
@@ -353,9 +344,10 @@ body, html {
 
 .first-reviews {
     height: auto;
+    width: 100%;
+
     font-family: 'Varela Round', sans-serif;
     color: aliceblue;
-    width: 100%;
 }
 
 .first-reviews__text {
@@ -372,36 +364,6 @@ body, html {
     border-width: 0px;
     aspect-ratio: 16 / 9;
     
-}
-
-@media only screen and (min-width: 992px)
-{
-    .reviews-title {
-        margin-top: 130px;
-    }
-
-    .first-reviews {
-        overflow:auto;
-        display:flex
-    }
-    
-    .first-reviews__text {
-        float:left;
-        width: 50%;
-        margin: auto;
-    }
-    
-    .first-reviews__video {
-        float: right;
-        width: 40%;
-        margin-right: 20px;
-        margin-top: 20px;
-        border-style: solid;
-        border-width: 2px;
-        border-color: #000080;
-        border-radius: 20px;
-        margin:auto;
-    }
 }
 
 @media screen and (max-width: 850px) {
@@ -452,11 +414,63 @@ body, html {
     float:left;
 }
 
+.company-reviews{
+    margin: 10px auto;
+    width: 90%;
+    border-collapse: collapse;
+}
 
+.company-reviews__first-column{
+    font-size: 15px;
+}
 
+.company-reviews__companies-row{
+    font-size: 13px;
+    color: #6b6bff;
+}
 
+.company-reviews__cell{
+    font-family: 'Varela Round', sans-serif;
+    margin: 0;
+    padding: 0px 3px;
+    border: 1px solid #000080;
+}
+
+.company-reviews__ratings-row{
+    font-size: 12px;
+    color: aliceblue;
+}
+
+/* ///////////////////////////              DESKTOP REVIEWS PAGE             //////////////////////////////*/
 @media only screen and (min-width: 992px)
-{
+{ 
+    .reviews-title {
+        margin-top: 130px;
+    }
+
+    .first-reviews {
+        overflow:auto;
+        display:flex
+    }
+    
+    .first-reviews__text {
+        float:left;
+        width: 50%;
+        margin: auto;
+    }
+    
+    .first-reviews__video {
+        float: right;
+        width: 40%;
+        margin-right: 20px;
+        margin-top: 20px;
+        border-style: solid;
+        border-width: 2px;
+        border-color: #000080;
+        border-radius: 20px;
+        margin:auto;
+    }
+    
     .short-reviews{
         padding-top: 15px;
     
@@ -492,38 +506,7 @@ body, html {
         width: 48%;
         float: right;
     }
-    
-}
 
-.company-reviews{
-    margin: 10px auto;
-    width: 90%;
-    border-collapse: collapse;
-}
-
-.company-reviews__first-column{
-    font-size: 17px;
-}
-
-.company-reviews__companies-row{
-    font-size: 15px;
-    color: #6b6bff;
-}
-
-.company-reviews__cell{
-    margin: 0;
-    padding: 0px 3px;
-    border: 1px solid #000080;
-    width: 5%;
-}
-
-.company-reviews__ratings-row{
-    font-size: 15px;
-    color: aliceblue;
-}
-
-@media only screen and (min-width: 992px)
-{ 
     .company-reviews__first-column{
         font-size: 24px;
     }
