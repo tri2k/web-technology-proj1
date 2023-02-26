@@ -23,3 +23,8 @@ https://www.youtube.com/watch?v=gelmi4hvJes
 
 content for cast page:
 https://www.thewrap.com/avatar-the-way-of-water-cast-characters/
+image:
+https://lumiere-a.akamaihd.net/v1/images/avatar-twow-videobg02_fae5d62e.jpeg
+
+logo:
+https://lumiere-a.akamaihd.net/v1/images/pp_avatar_thewayofwater_logo_97_b382cbde.png
