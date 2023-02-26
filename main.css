@@ -121,9 +121,6 @@ body, html {
         margin: 5px 0;
         font-size: 12px;
     }
-    .links-list__link {
-
-    }
 }
     /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
 
@@ -322,6 +319,23 @@ body, html {
     color: rgb(255, 68, 255);
 }
 
+@media screen and (max-width: 850px) {
+    .wiki__title {
+        margin-top: 190px;
+    }
+
+    .container__card{
+        width: 90%;
+    }
+
+    .container__text {
+        font-size: 18px;
+        line-height: 24px;
+    
+    }
+
+}
+
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  ///////////////////               Review Page CSS                       ///////////////////////////////////////////
@@ -360,8 +374,6 @@ body, html {
     
 }
 
-/* random typical min-width I found for desktops and laptops */
-
 @media only screen and (min-width: 992px)
 {
     .reviews-title {
@@ -389,6 +401,12 @@ body, html {
         border-color: #000080;
         border-radius: 20px;
         margin:auto;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .reviews-title {
+        margin-top: 190px;
     }
 }
 
@@ -446,7 +464,7 @@ body, html {
     
     .short-reviews__review{
         padding: 0 8px 8px 8px;
-        height: 100px;
+        height: 120px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -475,4 +493,50 @@ body, html {
         float: right;
     }
     
+}
+
+.company-reviews{
+    margin: 10px auto;
+    width: 90%;
+    border-collapse: collapse;
+}
+
+.company-reviews__first-column{
+    font-size: 17px;
+}
+
+.company-reviews__companies-row{
+    font-size: 15px;
+    color: #6b6bff;
+}
+
+.company-reviews__cell{
+    margin: 0;
+    padding: 0px 3px;
+    border: 1px solid #000080;
+    width: 5%;
+}
+
+.company-reviews__ratings-row{
+    font-size: 15px;
+    color: aliceblue;
+}
+
+@media only screen and (min-width: 992px)
+{ 
+    .company-reviews__first-column{
+        font-size: 24px;
+    }
+    
+    .company-reviews__companies-row{
+        font-size: 20px;
+    }
+    
+    .company-reviews__cell{
+        width: 8%;
+    }
+    
+    .company-reviews__ratings-row{
+        font-size: 22px;
+    }
 }
