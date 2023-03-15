@@ -12,7 +12,7 @@ html {
     overflow-y: scroll;
 }
 
-/* //////////////////                        Header START                    /////////////////////////////////////////*/
+/* //////////////////                        Nav START                    /////////////////////////////////////////*/
 
 * {
     margin: 0;
@@ -82,11 +82,11 @@ html {
     transform-origin: left;
 } 
 
-/* //////////////////                        Header END                    /////////////////////////////////////////*/
+/* //////////////////                        Nav END                    /////////////////////////////////////////*/
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
 
-    /* ////////////////////                       Mobile Header START                       ///////////////////////////////////////////// */
+    /* ////////////////////                       Mobile Nav START                       ///////////////////////////////////////////// */
 
 
     .navigation-bar{
@@ -126,8 +126,70 @@ html {
         font-size: 12px;
     }
 }
-    /* ////////////////////                       Mobile Header END                     ///////////////////////////////////////////// */
+    /* ////////////////////                       Mobile Nav END                     ///////////////////////////////////////////// */
 
+/* ////////////////////                       Header START                     ///////////////////////////////////////////// */
+
+.header {
+    display:flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Varela Round', sans-serif;
+    margin-bottom: 20px;
+}
+
+.selector-menu {
+    font-size: 12px;
+    height: 30px;
+    width: 150px;
+    background-color: #00FFC5;
+    text-align: center;
+    /* margin: 0 0 15px 0; */
+}
+
+.button-confirmation {
+    height: 30px;
+    background-color: aliceblue;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.selector-menu__option {
+    background-color: white;
+    text-align: left;
+}
+
+.selector-menu__optgroup {
+    background-color: #E9E9E9;
+    text-align: left;
+}
+
+@media only screen and (min-width: 575px) {
+    .header {
+        justify-content: center;
+        column-gap: 10px;
+    }
+
+
+    .button-confirmation {
+        align-self: flex-end;
+        width: 150px;
+        margin-top: 0px;
+    }
+
+}
+
+@media only screen and (min-width: 400px) {
+    .selector-menu {
+        font-size: 14px;
+        width: 200px;
+    }
+}
+
+/* ////////////////////                       Header END                     ///////////////////////////////////////////// */
 
 /* //////////////////                        HOMEPAGE // MIXES START       /////////////////////////////////////////*/
 
@@ -179,7 +241,7 @@ html {
     margin-top: 120px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
 
     .content-area{
         font-size: 15px;
@@ -196,7 +258,7 @@ html {
     }
 
     .content-area--first{
-        margin-top: 170px;
+        margin-top: 220px;
     }
 
 
@@ -244,7 +306,6 @@ html {
     color: #5BC0EB;
     text-align: center;
 
-    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -281,7 +342,6 @@ html {
 .container__card-title {
     margin-bottom: 30px;
     color: #00FFC5;
-    /* font-family: ; */
     font-size: 24px;
     font-weight: 600;
 
@@ -310,10 +370,67 @@ html {
     color: rgb(255, 68, 255);
 }
 
+.questions-title {
+    font-family: 'Montserrat', serif;
+    width: 90%;
+    margin: 25px auto;
+    text-align: center;
+    color: aliceblue;
+    -webkit-text-stroke: 0.5px #E0E0E0;
+
+}
+
+.questions {
+    display:flex;
+    justify-content: space-around;
+
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+.questions__card {
+    width: 45%;
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+    color: aliceblue;
+
+    background-color: #0000b0;
+    border-radius: 30px;
+    min-height: 80px;
+    margin: 10px 5px;
+
+    box-shadow: 0 50px 50px  rgba(0,0,0,0.1);
+
+}
+.questions__card-title {
+    font-size: 32px;
+}
+
+.questions__question {
+    display: none;
+    color: #00FFC5;
+    text-shadow:
+    0.07em 0 black,
+    0 0.07em black,
+    -0.07em 0 black,
+    0 -0.07em black;
+    margin: 5px;
+}
+
+.questions__answer {
+    display: none;
+    color: transparent;
+    text-shadow: 0 0 8px aliceblue;
+    margin-bottom: 15px;
+}
+
 @media screen and (max-width: 850px) {
-    .container__title {
-        margin-top: 190px;
-    }
 
     .container__card{
         width: 90%;
@@ -323,6 +440,10 @@ html {
         font-size: 18px;
         line-height: 24px;
     
+    }
+
+    .questions__card{
+        width: 90%;
     }
 
 }
@@ -335,9 +456,6 @@ html {
 .reviews-title {
     font-family: 'Montserrat', serif;
     color: #00FFC5;
-
-
-    margin-top: 100px;
     width: 100%;
     text-align: center;
 }
@@ -366,21 +484,15 @@ html {
     
 }
 
-@media screen and (max-width: 850px) {
-    .reviews-title {
-        margin-top: 190px;
-    }
-}
-
 .short-reviews{
     font-family: 'Varela Round', sans-serif;
 
     padding-top: 15px;
-    width: 90%;
-    margin: 0 3%;
+    width: 100%;
+
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     box-sizing: border-box;
 }
 
@@ -390,8 +502,8 @@ html {
     border: 1px solid #000080;
 
     padding: 0 5px 5px 5px;
-    margin: 5px auto;
-    width: 100%;
+    margin: 5px 0px;
+    width: 88%;
 
 
 }
@@ -444,9 +556,6 @@ html {
 /* ///////////////////////////              DESKTOP REVIEWS PAGE             //////////////////////////////*/
 @media only screen and (min-width: 992px)
 { 
-    .reviews-title {
-        margin-top: 130px;
-    }
 
     .first-reviews {
         overflow:auto;
@@ -473,13 +582,18 @@ html {
     
     .short-reviews{
         padding-top: 15px;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        grid-auto-rows: 1fr;
+        align-items: stretch;
     
     }
     
     .short-reviews__review{
         padding: 0 8px 8px 8px;
-        height: 120px;
+
         display: flex;
+        width: 45%;
         align-items: center;
         justify-content: center;
         position: relative;
@@ -497,14 +611,6 @@ html {
     .short-reviews__text{
         margin:1em 0 0 0;
         padding-top: 5px;
-    }
-    .short-reviews__first_column{
-        width: 48%;
-    }
-    
-    .short-reviews__second_column{
-        width: 48%;
-        float: right;
     }
 
     .company-reviews__first-column{
