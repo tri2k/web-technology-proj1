@@ -113,7 +113,7 @@ logo.style = 'padding: 20px; height: 80px; float: left; margin-top: -20px;';
 // Creation of the header menu list
 
 const unorderedList = document.createElement('ul');
-unorderedList.style = 'float: right; margin-right: 25px; margin-top: 0px';
+unorderedList.style = 'float: right; margin-right: 25px; margin-top: 0px; justify-self: flex-end;';
 
 // Creation of the menu list items / links
 
@@ -142,7 +142,7 @@ function addPageLink(textName, fileName) {
 // Creating the navigation bar
 
 const navbar = document.getElementById("navbar");
-navbar.style = 'height: auto; width: 100%; top: 0; left: 0; z-index: 10; position: fixed; background: rgba(0, 0, 0, 0.7); box-sizing: border-box; border-bottom: 2px solid #000080; display:flex; align-items:center; flex-wrap: wrap;';
+navbar.style = 'height: auto; width: 100%; top: 0; left: 0; z-index: 10; position: fixed; background: rgba(0, 0, 0, 0.7); box-sizing: border-box; border-bottom: 2px solid #000080; display:flex; align-items:center; flex-wrap: wrap; justify-content: flex-end;';
 navbar.append(logo);
 navbar.append(unorderedList);
 
@@ -156,7 +156,7 @@ navbar.append(unorderedList);
 
 const title = document.createElement('h1');
 title.textContent = Avatar._title;
-title.style = "font-family: 'Montserrat', serif; font-size: 40px; line-height: 40px; margin-left: auto; margin-right: auto; text-align: center; color: #00FFC5; text-shadow: rgb(49, 58, 231) 3px 2px";
+title.style = "font-family: 'Montserrat', serif; font-size: 40px; line-height: 40px; margin-left: auto; margin-right: auto; text-align: center; color: #00FFC5; text-shadow: rgb(49, 58, 231) 3px 2px; margin-top: 120px;";
 
 const genreAndYear = document.createElement('h2');
 genreAndYear.textContent = "Genres: " + Avatar._genre + " | Year: " + Avatar._year;

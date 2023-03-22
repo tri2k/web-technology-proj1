@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1.content-area--first Movies
+    each movie, i in movies
+        section
+            h1= movie.title
+            p= movie.genres
+            p= movie.description

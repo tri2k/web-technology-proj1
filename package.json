@@ -1,0 +1,20 @@
+{
+  "name": "web-technology-proj1",
+  "version": "1.0.0",
+  "description": "Movie Website",
+  "main": "main.js",
+  "scripts": {
+    "devStart": "nodemon main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pug": "^3.0.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
