@@ -1,9 +1,9 @@
 extends layout
 
 block content
-    h1.content-area--first Movies
-    each movie, i in movies
-        section
-            h1= movie.title
-            p= movie.genres
-            p= movie.description
+    secion.movies-list
+        each movie, i in movies
+            a.movies-list__movie(href=`/movie/${movie.id}`)
+                h2.movie__title= movie.title
+                img.movie__poster(src=movie.poster_path)
+    a.page-button(href=`?page=${page}`) Next Page
