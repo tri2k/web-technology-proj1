@@ -9,47 +9,11 @@ if (!exists) {
 const db = new sqlite3.Database(file);
 
 db.serialize(function () {
-    if (!exists) {
+    if(!exists) {
         createTables();
         fillTables();
     }
 });
-
-let movies = 1;
-movies = queryMovies();
-
-function queryMovies() {
-    db.all('SELECT * FROM movies', [], (err, rows) => {
-        if (err) return console.error(err.message);
-        // rows.forEach((row) => {
-        //     console.log(row);
-        // });
-
-        return addGenresToMovies(rows);
-    });
-}
-
-function getMovies() {
-    return movies;
-}
-
-// Add genres array to movies
-function addGenresToMovies(movieList) {
-    movieList.forEach(movie => {
-        db.all(`SELECT genre FROM genres WHERE movie_id = ${movie.id}`, [], (err, rows) => {
-            if (err) return console.error(err.message);
-
-            // rows is an array of objects, let's turn it into an array of strings
-            for (let i = 0; i < rows.length; i++) {
-                rows[i] = rows[i].genre
-            }
-            movie.genres = rows;
-            console.log(movie);
-        })
-    });
-    db.close();
-    return movieList
-}
 
 function createTables() {
     tableStatements = [];
@@ -169,6 +133,3 @@ function dbRunStatement(statement, params) {
         if (err) return console.error(err.message);
     })
 }
-
-module.exports = getMovies;
-module.exports = movies;

@@ -10,12 +10,6 @@ body.append(test);
 let movies;
 
 db.serialize(function () {
-    if(!exists) {
-        createTables();
-        fillTables();
-    }
-
-
     db.all('SELECT * FROM movies', [], (err, rows) => {
         if (err) return console.error(err.message);
         // rows.forEach((row) => {
@@ -39,9 +33,9 @@ function addGenresToMovies() {
             }
             movie.genres = rows;
             console.log(movie);
-        })
+        });
     });
-    db.close();
+    //db.close();
 }
 
 movies = main.getMovies;
