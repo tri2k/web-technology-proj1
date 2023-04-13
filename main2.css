@@ -53,6 +53,11 @@ body {
     align-self: center;
 }
 
+.movie__title {
+    font-size: 16px;
+    line-height: 1.0;
+}
+
 .movie__poster {
     width: 90%;
     align-self: center;
@@ -78,3 +83,8 @@ body {
 
 }
 
+@media only screen and (min-width: 500px) {
+    .movie__title {
+        font-size: 24px;
+    }
+}

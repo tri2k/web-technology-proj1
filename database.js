@@ -3,22 +3,24 @@ const sqlite3 = require("sqlite3").verbose();
 
 const file = "./theatre.db";
 const exists = fs.existsSync(file);
-if (!exists) {
-    fs.openSync(file, "w");
-}
-const db = new sqlite3.Database(file);
+let db;
 
-db.serialize(function () {
-    if(!exists) {
-        createTables();
-        fillTables();
-    }
-});
+const createDatabase = () => {
+    db = new sqlite3.Database(file);
+    db.serialize(function () { 
+        if (!exists) {
+            createTables();
+            fillTables();
+        }
+    });
+}
 
 function createTables() {
     tableStatements = [];
     tableStatements.push('CREATE TABLE movies(id INTEGER PRIMARY KEY, title TEXT, poster_path TEXT, rating INTEGER, audience_rating TEXT, language TEXT, subtitles INTEGER, duration_minutes INTEGER, description TEXT)');
-    tableStatements.push('CREATE TABLE genres(movie_id INTEGER, genre TEXT, PRIMARY KEY (movie_id, genre), FOREIGN KEY (movie_id) REFERENCES movies (id))')
+    tableStatements.push('CREATE TABLE genres(movie_id INTEGER, genre TEXT, PRIMARY KEY (movie_id, genre), FOREIGN KEY (movie_id) REFERENCES movies (id))');
+    tableStatements.push('CREATE TABLE credit_card(id INTEGER PRIMARY KEY, card_number INTEGER, expiration_date TEXT)')
+    tableStatements.push('CREATE TABLE user(id INTEGER PRIMARY KEY, credit_card_id INTEGER, email TEXT UNIQUE, name TEXT, username TEXT UNIQUE, password TEXT, address TEXT, FOREIGN KEY (credit_card_id) REFERENCES credit_card (id))');
 
     tableStatements.forEach(statement => dbRunStatement(statement));
 }
@@ -89,7 +91,7 @@ function fillTables() {
     movieData.push(["Moving on", "media/moving.jpg", 70, "R", "English", 0, 85, "Jane Fonda and Lily Tomlin star as estranged friends who reunite to seek revenge on the petulant widower (Malcolm McDowell) of their recently deceased best friend. Along the way, Fonda's character reunites with her great love (Richard Roundtree) as each woman learns to make peace with the past and each other."]);
     genreData.push([13, "Comedy"]);
 
-    movieData.push(["Demon Slayer: Kimetsu No Yaiba - To The Swordsmith Village", "media/demon.jpg", 67, "R", "Japanese", 1, 110, "After his family is viciously murdered, a kind-hearted boy named Tanjiro Kamado resolves to become a Demon Slayer in hopes of turning his younger sister Nezuko back into a human. Together with his comrades, Zenitsu and Inosuke, along with one of the top-ranking members of the Demon Slayer Corps, Tengen Uzui, Tanjiro embarks on a mission within the Entertainment District, where they encounter the formidable, high-ranking demons, Daki and Gyutaro."]);
+    movieData.push(["Demon Slayer: Kimetsu No Yaiba", "media/demon.jpg", 67, "R", "Japanese", 1, 110, "After his family is viciously murdered, a kind-hearted boy named Tanjiro Kamado resolves to become a Demon Slayer in hopes of turning his younger sister Nezuko back into a human. Together with his comrades, Zenitsu and Inosuke, along with one of the top-ranking members of the Demon Slayer Corps, Tengen Uzui, Tanjiro embarks on a mission within the Entertainment District, where they encounter the formidable, high-ranking demons, Daki and Gyutaro."]);
     genreData.push([14, "Animation"]);
     genreData.push([14, "Action"]);
     genreData.push([14, "Adventure"]);
@@ -129,7 +131,10 @@ function fillTables() {
 function dbRunStatement(statement, params) {
     /*     console.log(statement);
         console.log(params); */
+        
     db.run(statement, params, err => {
         if (err) return console.error(err.message);
     })
 }
+
+module.exports = createDatabase;

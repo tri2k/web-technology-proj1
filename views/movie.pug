@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    section.single-movie
+        img.single-movie__poster(src=`../../${movie.posterPath}`)
+        h1.single-movie__title #{movie.title}
+        ul.single-movie__info
+            li.single-movie__duration #{movie.duration}
+            li.single-movie__audience-rating #{movie.audienceRating}
+            li.single-movie__language #{movie.language.toUpperCase()}
+            li.single-movie__subtitles #{movie.subtitles == 1 ? "SUBTITLES" : "NO SUBTITLES"}
+
+            ul.single-movie__genres-list
+                each genre, i in movie.genreList
+                    li.single-movie__genre #{genre}
+
+            li.single-movie__rating #{movie.rating} 
+        
+        p.single-movie__description #{movie.description}
