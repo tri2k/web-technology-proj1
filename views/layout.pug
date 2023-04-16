@@ -9,10 +9,17 @@ html(lang="en")
             include ../main2.css
     body 
         nav.navbar
-            a.navbar__link Movies
-            a.navbar__link Test
-            a.navbar__link Test2
-            a.navbar__link.navbar__user Register
+            a.navbar__link(href='/group41/movies') Movies
+
+            if user
+                a.navbar__link(href='/group41/order') Order
+                a.navbar__link.navbar__right(href='/group41/user/orders') My Orders
+                a.navbar__link(href='/group41/user') User Info
+                a.navbar__link(href=`/group41/logout`) Logout
+            else
+                a.navbar__link(href='/group41/register') Order
+                a.navbar__link.navbar__right(href='/group41/login') Login
+                a.navbar__link(href='/group41/register') Register
         block content
 
         footer

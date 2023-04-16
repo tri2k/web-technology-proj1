@@ -2,31 +2,33 @@ extends layout
 
 block content
     section.register-section
-        form(method='post' action='/register' id='form')
+        form(method='post' action='/group41/register' id='form')
+            if error
+                p #{error}
             label.register-section__text(for='email') Email:
-            input.register-section__input(type='email' name='email' id='email' required)
+            input.register-section__input(type='email' name='email' id='email' value=user.email required)
 
             label.register-section__text(for='name') Full Name:
-            input.register-section__input(type='text' name='name' id='name' required)
+            input.register-section__input(type='text' name='name' id='name' value=user.name required)
   
             label.register-section__text(for='username') Username:
-            input.register-section__input(type='text' name='username' id='username' required)
+            input.register-section__input(type='text' name='username' id='username' value=user.username required)
   
             label.register-section__text(for='password') Password:
-            input.register-section__input(type='password' name='password' id='password' required)
+            input.register-section__input(type='password' name='password' id='password' value=user.password required)
 
             label.register-section__text(for='password') Confirm Password:
-            input.register-section__input(type='password' name='password-2' id='password-2' required)
+            input.register-section__input(type='password' name='password-2' id='password-2' value=user.password required)
   
             label.register-section__text(for='credit-card') Credit Card Number:
-            input.register-section__input(type='text' name='credit_card' id='credit_card' required)
+            input.register-section__input(type='text' name='credit_card' id='credit_card' value=user.creditCardNum required)
   
             label.register-section__text(for='expiration-date') Credit Card Expiration Date:
-            input.register-section__input(type='text' name='expiration_date' id='expiration_date' required)
+            input.register-section__input(type='text' name='expiration_date' id='expiration_date' value=user.expirationDate required)
   
             label.register-section__text(for='address') Address:
-            input.register-section__input(type='text' name='address' id='address' required)
+            input.register-section__input(type='text' name='address' id='address' value=user.address required)
   
             button.register-section__button(type='submit') Register
 
-    script(src="../scripts/registerPage.js")
+    script(src="./scripts/registerPage.js")

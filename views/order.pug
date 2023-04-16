@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  section.order__movie.order__section
+    h1 Order a Movie Ticket
+    label(for="movie-select") Select a Movie:
+    select#movie-select.order__select(name="movie")
+        each movie in movies
+            option.order__option(value=`${movie.id}`) #{movie.title}
+    button(type="submit" id = "movie-button") Next
+
+  section.order__date.order__section.order--hidden
+    h1 Choose a Date and Time
+    label(for="date-select") Select a Date:
+    select#date-select.order__select(name="date")
+        each date in dates
+            option.order__option(value=`${date}`) #{date}
+    button(type="submit" id = "date-button") Next
+
+  section.order__confirm.order__section.order--hidden
+    h1 Confirm Your Order
+    p.order__message 
+    form(method="POST" action="/group41/order/make-order")
+      input(type="hidden" name="movie_id" id="movie_id" value="")
+      input(type="hidden" name="date" id="date" value="")
+      button(type="submit" id = "confirm-button") Confirm Order
+    script(src="./scripts/orderPage.js")

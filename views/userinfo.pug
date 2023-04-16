@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1.user-title User Information
+    table.user-table
+        tr.user-table__data-type
+            th Email
+            th Name
+            th Username
+            th Password
+            th Address
+            th Card Number
+            th Expiration Date
+        tr
+            td #{user.email}
+            td #{user.name}
+            td #{user.username}
+            td #{user.password}
+            td #{user.address}
+            td #{user.creditCardNum}
+            td #{user.expirationDate}

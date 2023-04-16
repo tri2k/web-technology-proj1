@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Your orders
+    section.orders
+        each order in orders 
+            article.orders__order 
+                h2 #{order.movie_id}
+                h3 #{order.date}
+            

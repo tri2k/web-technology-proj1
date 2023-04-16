@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Login
+    if error
+        p.error #{error}
+    form(action='/group41/login', method='post')
+      label(for='username') Username:
+      input(type='text', id='username', name='username', value=username)
+      label(for='password') Password:
+      input(type='password', id='password', name='password', value=password)
+      button(type='submit') Login

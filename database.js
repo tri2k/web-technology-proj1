@@ -1,3 +1,5 @@
+// database definition
+
 const fs = require("fs");
 const sqlite3 = require("sqlite3").verbose();
 
@@ -20,9 +22,8 @@ function createTables() {
     tableStatements = [];
     tableStatements.push('CREATE TABLE movies(id INTEGER PRIMARY KEY, title TEXT, poster_path TEXT, rating INTEGER, audience_rating TEXT, language TEXT, subtitles INTEGER, duration_minutes INTEGER, description TEXT)');
     tableStatements.push('CREATE TABLE genres(movie_id INTEGER, genre TEXT, PRIMARY KEY (movie_id, genre), FOREIGN KEY (movie_id) REFERENCES movies (id))');
-    //tableStatements.push('CREATE TABLE credit_cards(id INTEGER PRIMARY KEY, card_number INTEGER, expiration_date TEXT)')
-    //tableStatements.push('CREATE TABLE users(id INTEGER PRIMARY KEY, credit_card_id INTEGER, email TEXT UNIQUE, name TEXT, username TEXT UNIQUE, password TEXT, address TEXT, FOREIGN KEY (credit_card_id) REFERENCES credit_card (id))');
-    tableStatements.push('CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT, name TEXT, username TEXT, password TEXT, address TEXT, card_number, expiration_date)');
+    tableStatements.push('CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT UNIQUE, name TEXT, username TEXT UNIQUE, password TEXT, address TEXT, card_number TEXT, expiration_date TEXT)');
+    tableStatements.push('CREATE TABLE orders(id INTEGER PRIMARY KEY, user_id INTEGER, movie_id INTEGER, date TEXT)');
 
     tableStatements.forEach(statement => dbRunStatement(statement));
 }
@@ -34,22 +35,22 @@ function fillMovies() {
     movieData = [];
     genreData = [];
 
-    movieData.push(["Avatar: The Way of Water", "media/avatar.jpg", , "PG13", "English", 0, 192, "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home."]);
+    movieData.push(["Avatar: The Way of Water", "media/avatar.jpg", 32, "PG13", "English", 0, 192, "Jake Sully lives with his newfound family formed on the extrasolar moon Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Na'vi race to protect their home."]);
     genreData.push([1, "Action"]);
     genreData.push([1, "Adventure"]);
     genreData.push([1, "Fantasy"]);
 
-    movieData.push(["Shazam! Fury Of The Gods", "media/shazam.jpg", , "PG13", "English", 0, 130, "The film continues the story of teenage Billy Batson who, upon reciting the magic word \"SHAZAM!\" is transformed into his adult Super Hero alter ego, Shazam."]);
+    movieData.push(["Shazam! Fury Of The Gods", "media/shazam.jpg", 68, "PG13", "English", 0, 130, "The film continues the story of teenage Billy Batson who, upon reciting the magic word \"SHAZAM!\" is transformed into his adult Super Hero alter ego, Shazam."]);
     genreData.push([2, "Action"]);
     genreData.push([2, "Adventure"]);
     genreData.push([2, "Comedy"]);
 
-    movieData.push(["Ant-Man and the Wasp: Quantumania", "media/ant-man.jpg", , "PG13", "English", 0, 125, "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible."]);
+    movieData.push(["Ant-Man and the Wasp: Quantumania", "media/ant-man.jpg", 96, "PG13", "English", 0, 125, "Scott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible."]);
     genreData.push([3, "Action"]);
     genreData.push([3, "Adventure"]);
     genreData.push([3, "Comedy"]);
 
-    movieData.push(["Creed III", "media/creed.jpg", , "PG13", "English", 0, 116, "Adonis has been thriving in both his career and family life, but when a childhood friend and former boxing prodigy resurfaces, the face-off is more than just a fight."]);
+    movieData.push(["Creed III", "media/creed.jpg", 84, "PG13", "English", 0, 116, "Adonis has been thriving in both his career and family life, but when a childhood friend and former boxing prodigy resurfaces, the face-off is more than just a fight."]);
     genreData.push([4, "Drama"]);
     genreData.push([4, "Sport"]);
 
@@ -146,7 +147,7 @@ function dbRunStatement(statement, params) {
         console.log(params); */
         
     db.run(statement, params, err => {
-        if (err) return console.error(err.message);
+        if (err) return console.error(statement + " " + params + " " + err.message);
     })
 }
 

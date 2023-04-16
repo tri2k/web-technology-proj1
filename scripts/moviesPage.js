@@ -22,14 +22,16 @@ if (currentPage != 2) {
 }
 
 let req = new XMLHttpRequest();
-req.open('GET', `movies/getMovies?page=${currentPage}`, true);
+req.open('GET', `/group41/movies/getMovies?page=${currentPage}`, true);
 req.onreadystatechange = function () {
     if (req.readyState === 4 && req.status === 200) {
         movieListResponse = JSON.parse(req.responseText);
-        console.log(movieListResponse);
+
+        //console.log(movieListResponse); // DEBUG GET RESPONSE
+
         for (let i = 0; i < movieListResponse.length; i++) {
             movieList.push(new Movie(movieListResponse[i]));
-            console.log(movieList);
+            //console.log(movieList);
         }
         //console.log(movieList);
 
@@ -49,7 +51,7 @@ function fillWebsite() {
 function addMovie(movie) {
     const movieElement = document.createElement('a');
     movieElement.classList.add('movies-list__movie');
-    movieElement.href = `/movies/movie/${movie.id}`;
+    movieElement.href = `movies/movie/${movie.id}`;
 
     const titleElement = document.createElement('h2');
     titleElement.classList.add('movie__title');
@@ -57,7 +59,7 @@ function addMovie(movie) {
 
     const posterElement = document.createElement('img');
     posterElement.classList.add('movie__poster');
-    posterElement.src = "../" + movie.posterPath;
+    posterElement.src = "./" + movie.posterPath;
 
     movieElement.appendChild(titleElement);
     movieElement.appendChild(posterElement);

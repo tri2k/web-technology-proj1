@@ -1,5 +1,7 @@
 html {
     box-sizing: border-box;
+    background-color: #333;
+    color: #ddd;
 }
 
 html, body {
@@ -23,7 +25,7 @@ body {
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #222;
     display: flex;
 }
 
@@ -40,7 +42,7 @@ body {
     color:black;
 }
 
-.navbar__user {
+.navbar__right {
     margin-left: auto;
 }
 
@@ -54,19 +56,19 @@ body {
 }
 
 .movie__title {
-    font-size: 16px;
+    font-size: 24px;
     line-height: 1.0;
 }
 
 .movie__poster {
-    width: 90%;
+    width: 80%;
     align-self: center;
 }
 
 .movies-list__movie {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 100%;
     text-align: center;
     text-decoration: none;
 }
@@ -87,4 +89,83 @@ body {
     .movie__title {
         font-size: 24px;
     }
+
+    .movies-list__movie {
+        width: 40%;
+    }
+}
+
+/* ///////////////////// /movies/movie/id /////////////////////// */
+
+.single-movie {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "header"
+      "main"
+      "info"
+      "footer";
+}
+
+.single-movie__poster {
+    grid-area: header;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    height: auto;
+}
+
+.single-movie__title {
+    grid-area: main;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.single-movie__info {
+    grid-area: info;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+}
+
+.single-movie__info-item {
+    font-size: 10px;
+    width: 80px;
+}
+
+.single-movie__genres-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+.single-movie__genre {
+    font-size: 10px;
+    margin: 0px 5px;
+}
+.single-movie__description {
+    width: 90%;
+    margin: 0px auto;
+    grid-area: footer;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* /////////////////////////////////// /order ///////////////////////////////*/
+
+.order--hidden {
+    display:none;
+}
+
+.order__option {
+    font-size: 14px;
+    height: 10px;
+    padding: 0;
 }
