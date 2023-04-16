@@ -2,9 +2,12 @@ extends layout
 
 block content
     section.register-section
-        form(method='post' action='/register')
+        form(method='post' action='/register' id='form')
             label.register-section__text(for='email') Email:
             input.register-section__input(type='email' name='email' id='email' required)
+
+            label.register-section__text(for='name') Full Name:
+            input.register-section__input(type='text' name='name' id='name' required)
   
             label.register-section__text(for='username') Username:
             input.register-section__input(type='text' name='username' id='username' required)
@@ -16,10 +19,10 @@ block content
             input.register-section__input(type='password' name='password-2' id='password-2' required)
   
             label.register-section__text(for='credit-card') Credit Card Number:
-            input.register-section__input(type='text' name='credit-card' id='credit-card' required)
+            input.register-section__input(type='text' name='credit_card' id='credit_card' required)
   
             label.register-section__text(for='expiration-date') Credit Card Expiration Date:
-            input.register-section__input(type='text' name='expiration-date' id='expiration-date' required)
+            input.register-section__input(type='text' name='expiration_date' id='expiration_date' required)
   
             label.register-section__text(for='address') Address:
             input.register-section__input(type='text' name='address' id='address' required)

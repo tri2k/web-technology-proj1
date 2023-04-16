@@ -10,7 +10,8 @@ const createDatabase = () => {
     db.serialize(function () { 
         if (!exists) {
             createTables();
-            fillTables();
+            fillMovies();
+            fillUsers();
         }
     });
 }
@@ -19,13 +20,14 @@ function createTables() {
     tableStatements = [];
     tableStatements.push('CREATE TABLE movies(id INTEGER PRIMARY KEY, title TEXT, poster_path TEXT, rating INTEGER, audience_rating TEXT, language TEXT, subtitles INTEGER, duration_minutes INTEGER, description TEXT)');
     tableStatements.push('CREATE TABLE genres(movie_id INTEGER, genre TEXT, PRIMARY KEY (movie_id, genre), FOREIGN KEY (movie_id) REFERENCES movies (id))');
-    tableStatements.push('CREATE TABLE credit_card(id INTEGER PRIMARY KEY, card_number INTEGER, expiration_date TEXT)')
-    tableStatements.push('CREATE TABLE user(id INTEGER PRIMARY KEY, credit_card_id INTEGER, email TEXT UNIQUE, name TEXT, username TEXT UNIQUE, password TEXT, address TEXT, FOREIGN KEY (credit_card_id) REFERENCES credit_card (id))');
+    //tableStatements.push('CREATE TABLE credit_cards(id INTEGER PRIMARY KEY, card_number INTEGER, expiration_date TEXT)')
+    //tableStatements.push('CREATE TABLE users(id INTEGER PRIMARY KEY, credit_card_id INTEGER, email TEXT UNIQUE, name TEXT, username TEXT UNIQUE, password TEXT, address TEXT, FOREIGN KEY (credit_card_id) REFERENCES credit_card (id))');
+    tableStatements.push('CREATE TABLE users(id INTEGER PRIMARY KEY, email TEXT, name TEXT, username TEXT, password TEXT, address TEXT, card_number, expiration_date)');
 
     tableStatements.forEach(statement => dbRunStatement(statement));
 }
 
-function fillTables() {
+function fillMovies() {
     movieStatement = 'INSERT INTO movies(title, poster_path, rating, audience_rating, language, subtitles, duration_minutes, description) VALUES (?,?,?,?,?,?,?,?)';
     genreStatement = 'INSERT INTO genres(movie_id, genre) VALUES (?,?)';
 
@@ -126,6 +128,17 @@ function fillTables() {
 
     movieData.forEach(params => dbRunStatement(movieStatement, params));
     genreData.forEach(params => dbRunStatement(genreStatement, params));
+}
+
+function fillUsers() {
+    userStatement = 'INSERT INTO users(email, name, username, password, address, card_number, expiration_date) VALUES (?,?,?,?,?,?,?)';
+    
+    userData = [];
+
+    userData.push(['jack@gmail.com', 'Jack Fields', 'jack1', 'jackrules123', 'Jackstreet 5, Amsterdam', '123425', '01-01-1960'])
+    userData.push(['bob@gmail.com', 'Bob Frost', 'bobby', 'jacksucks123', 'Kerkstraat 3, Twello', '123509', '01-01-2025'])
+
+    userData.forEach(params => dbRunStatement(userStatement, params));
 }
 
 function dbRunStatement(statement, params) {
